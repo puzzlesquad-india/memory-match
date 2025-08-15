@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Memory Match</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="wrap">
+    <h1>Memory Match</h1>
+    <div class="controls">
+      <label for="difficulty">Difficulty</label>
+      <select id="difficulty" aria-label="Select difficulty">
+        <option value="easy">Easy (4×4)</option>
+        <option value="medium">Medium (4×6)</option>
+        <option value="hard">Hard (6×6)</option>
+      </select>
+      <button id="restart" class="btn" aria-label="Restart game">Restart</button>
+    </div>
+    <div class="stats" role="status" aria-live="polite">
+      <div>⏱️ Time: <span id="time">0</span>s</div>
+      <div>🌀 Moves: <span id="moves">0</span></div>
+      <div>🏆 Best: <span id="best">—</span></div>
+    </div>
+  </header>
+
+<section id="instructions" class="wrap instructions" aria-label="How to play">
+  <h2>How to Play</h2>
+  <ol>
+    <li>Click or tap on a card to flip it over.</li>
+    <li>Flip another card to find its matching picture.</li>
+    <li>If the two cards match, they stay open.</li>
+    <li>If they don’t match, they flip back after a moment.</li>
+    <li>Keep matching pairs until all cards are open.</li>
+    <li>Try to finish in the shortest time and with the fewest moves!</li>
+  </ol>
+  <p><strong>Tip:</strong> You can change the difficulty from Easy to Hard using the menu above.</p>
+</section>
+
+
+  <main class="wrap">
+    <section id="grid" class="grid" aria-label="Game board"></section>
+  </main>
+
+  <dialog id="winDialog" class="dialog">
+    <h2>Great job! 🎉</h2>
+    <p>You finished in <strong><span id="finalTime"></span>s</strong> with <strong><span id="finalMoves"></span></strong> moves.</p>
+    <div class="dialog-actions">
+      <button id="playAgain" class="btn">Play again</button>
+      <button id="share" class="btn" aria-label="Share result">Share</button>
+      <button id="closeDialog" class="btn btn-ghost">Close</button>
+    </div>
+  </dialog>
+
+  <footer class="wrap foot">
+    <small>Tip: Use keyboard Tab/Enter/Space to flip cards. Works offline once loaded.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
